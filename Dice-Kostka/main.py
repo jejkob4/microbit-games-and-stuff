@@ -1,5 +1,6 @@
 from microbit import *
 import random
+import time
 # startovací sekvence
 
 jedna = (Image('00000:'
@@ -45,6 +46,10 @@ kocka = [jedna, dva, tri, ctyri, pet, sest]
 #pořád
 while True:
     if button_a.was_pressed() or button_b.was_pressed() or pin_logo.is_touched():
+        display.clear()
+        display.show(Image.GHOST)
+        time.sleep(1)
+        display.clear()
         x = random.choice(kocka)
         display.show(x)
         print(x)

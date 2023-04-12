@@ -1,12 +1,13 @@
 from microbit import *
 import time
 import random
-import music
+
 
 # startovací sekvence
-display.scroll('Whack A Mole!')
-display.scroll('Press logo to play!')
-music.play(music.FUNK)        
+start = 0
+if start == 0:
+    display.scroll('Whack A Mole!')
+    start = 1
 
 # imgs + endgame
 buttonA = Image('00700:'
@@ -21,7 +22,7 @@ buttonB = Image('00700:'
                 '00090:'
                 '00700')
 
-endgame = ('Game Over!')
+endgame = ('GG!')
 
 # random list
 element_list = [button_a, button_b]

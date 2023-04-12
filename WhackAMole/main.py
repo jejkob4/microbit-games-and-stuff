@@ -49,9 +49,11 @@ def show_directions(img):
     display.show(img)
     time.sleep(2)
 
-#variably pro loop
-count = 0
+    display.show(score)
 
+    #variably
+count = 0
+score = 0
    
 #pořád
 while True:
@@ -77,5 +79,8 @@ while True:
         
             if x.was_pressed():
                 success_press()
+                score = score + 1
         else:
             game_over(endgame) 
+            display.scroll("Tvoje skore je: ")
+            display.show(score)
